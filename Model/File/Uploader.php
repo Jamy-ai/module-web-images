@@ -9,7 +9,6 @@ namespace MagestyApps\WebImages\Model\File;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\File\Mime;
 use Magento\Framework\Filesystem;
-use Magento\Framework\Filesystem\Directory\TargetDirectory;
 use Magento\Framework\Filesystem\DriverPool;
 use MagestyApps\WebImages\Helper\ImageHelper;
 
@@ -27,7 +26,6 @@ class Uploader extends \Magento\Framework\File\Uploader
      * @param Mime|null $fileMime
      * @param DirectoryList|null $directoryList
      * @param DriverPool|null $driverPool
-     * @param TargetDirectory|null $targetDirectory
      * @param Filesystem|null $filesystem
      */
     public function __construct(
@@ -36,7 +34,6 @@ class Uploader extends \Magento\Framework\File\Uploader
         Mime $fileMime = null,
         DirectoryList $directoryList = null,
         DriverPool $driverPool = null,
-        TargetDirectory $targetDirectory = null,
         Filesystem $filesystem = null
     ) {
         parent::__construct(
@@ -44,7 +41,7 @@ class Uploader extends \Magento\Framework\File\Uploader
             $fileMime,
             $directoryList,
             $driverPool,
-            $targetDirectory,
+            null,
             $filesystem
         );
 
